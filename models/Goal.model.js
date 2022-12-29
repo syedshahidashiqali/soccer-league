@@ -7,11 +7,11 @@ const goalSchema = new Schema({
     ref: "Player",
     required: true,
   },
-  team: {
-    type: Schema.Types.ObjectId,
-    ref: "Team",
-    required: true,
-  },
+  // team: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Team",
+  //   required: true,
+  // },
 });
 
 module.exports = mongoose.model("Goal", goalSchema);

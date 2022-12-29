@@ -36,11 +36,11 @@ const teamSchema = new Schema(
   { timestamps: true }
 );
 
-teamSchema.virtual("total_goals", {
-  ref: Goal,
-  localField: "_id",
-  foreignField: "player",
-  count: true,
-});
+// teamSchema.virtual("total_goals", {
+//   ref: Goal,
+//   localField: "_id",
+//   foreignField: "team",
+//   count: true,
+// });
 
 module.exports = mongoose.model("Team", teamSchema);
