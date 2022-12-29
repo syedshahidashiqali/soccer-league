@@ -1,0 +1,381 @@
+{
+	"variables": [],
+	"info": {
+		"name": "soccer-league",
+		"_postman_id": "847676fe-1177-af87-c2e0-c048d72e8e65",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "location",
+			"description": "",
+			"item": [
+				{
+					"name": "get all locations",
+					"request": {
+						"url": "{{base_url}}/locations",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get location",
+					"request": {
+						"url": "{{base_url}}/locations/63ad96ef80963d294056d56c",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "add location",
+					"request": {
+						"url": "{{base_url}}/locations/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"location\": \"Gothenberg, Sweden\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update location",
+					"request": {
+						"url": "{{base_url}}/locations/update/63ad96ef80963d294056d56c",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"location\": \"London, England\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete location",
+					"request": {
+						"url": "{{base_url}}/locations/delete/63ad96ef80963d294056d56c",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"63ad96ef80963d294056d56c\",\n\t\"location\": \"London, England\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "team",
+			"description": "",
+			"item": [
+				{
+					"name": "register team",
+					"request": {
+						"url": "{{base_url}}/teams/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"team_name\": \"Thunder\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all teams",
+					"request": {
+						"url": "{{base_url}}/teams",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"team_name\": \"En Fuego CF\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get team performance",
+					"request": {
+						"url": "{{base_url}}/teams/performance/63ada326d76b7a4806bf00d7",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"team_name\": \"En Fuego CF\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "player",
+			"description": "",
+			"item": [
+				{
+					"name": "register player",
+					"request": {
+						"url": "{{base_url}}/players/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"player_name\" : \"Isac\",\n\t\"team\": \"63ada326d76b7a4806bf00d7\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all players",
+					"request": {
+						"url": "{{base_url}}/players",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"player_name\" : \"Marcel\",\n\t\"team\": \"63ada326d76b7a4806bf00d7\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all players by team",
+					"request": {
+						"url": "{{base_url}}/players/63ada326d76b7a4806bf00d7",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"player_name\" : \"Marcel\",\n\t\"team\": \"63ada326d76b7a4806bf00d7\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all players by team copy",
+					"request": {
+						"url": "https://soccer-league-production.up.railway.app/api/v1/players/63ada326d76b7a4806bf00d7",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"player_name\" : \"Marcel\",\n\t\"team\": \"63ada326d76b7a4806bf00d7\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "goal",
+			"description": "",
+			"item": [
+				{
+					"name": "register goal",
+					"request": {
+						"url": "{{base_url}}/goals/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"player\": \"63add8294cdeb179dc2ad153\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all goals",
+					"request": {
+						"url": "{{base_url}}/goals",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"player\": \"63ada767bda571be55a6e103\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "match",
+			"description": "",
+			"item": [
+				{
+					"name": "register match",
+					"request": {
+						"url": "{{base_url}}/matches/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"team\": \"63ada326d76b7a4806bf00d7\",\n\t\"vs_team\": \"63adb04764d05f527c077ac1\",\n\t\"match_location\": \"63ad9f9d22c49640eed96c8b\",\n\t\"match_time\": \"12/28/2022 10:40 PM\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all matches",
+					"request": {
+						"url": "{{base_url}}/matches",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"team\": \"63ada326d76b7a4806bf00d7\",\n\t\"vs_team\": \"63adb04764d05f527c077ac1\",\n\t\"match_location\": \"63ad9f9d22c49640eed96c8b\",\n\t\"match_time\": \"2022-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "upcoming matches of specific team",
+					"request": {
+						"url": {
+							"raw": "{{base_url}}/matches/upcoming?teamId=63ada326d76b7a4806bf00d7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"matches",
+								"upcoming"
+							],
+							"query": [
+								{
+									"key": "teamId",
+									"value": "63ada326d76b7a4806bf00d7",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"team\": \"63ada326d76b7a4806bf00d7\",\n\t\"vs_team\": \"63adb04764d05f527c077ac1\",\n\t\"match_location\": \"63ad9f9d22c49640eed96c8b\",\n\t\"match_time\": \"2022-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
