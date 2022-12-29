@@ -28,9 +28,28 @@ exports.registerPlayer = async (req, res) => {
 
 exports.getAllPlayers = async (req, res) => {
   try {
-    const players = await Player.find({});
+    const players = await Player.find({}).populate("goals");
 
     res.status(200).json(apiSuccessWithData("All players in DB", players));
+  } catch (err) {
+    res.status(500).json(apiError(err.message));
+  }
+};
+
+exports.getAllPlayersByTeam = async (req, res) => {
+  try {
+    const players = await Player.find({ team: req.params.teamId }).populate(
+      "goals"
+    );
+
+    res
+      .status(200)
+      .json(
+        apiSuccessWithData(
+          `All players of team ${req.params.teamId} in DB`,
+          players
+        )
+      );
   } catch (err) {
     res.status(500).json(apiError(err.message));
   }
