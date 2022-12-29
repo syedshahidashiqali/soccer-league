@@ -4,6 +4,10 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const logger = require("morgan");
+
+// ROUTES
+const routes = require("./routes/index");
+
 const connectDB = require("./config/db");
 
 const app = express();
@@ -22,7 +26,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(`/api/v1/`, routes);
+
 connectDB();
+
 app.listen(process.env.PORT, () => {
   console.log(
     "\u001b[" +
