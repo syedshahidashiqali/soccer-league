@@ -10,6 +10,7 @@ const routes = require("./routes/index");
 
 const connectDB = require("./config/db");
 
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.json({ limit: "50mb" }));
 
@@ -30,12 +31,8 @@ app.use(`/api/v1/`, routes);
 
 connectDB();
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log(
-    "\u001b[" +
-      34 +
-      "m" +
-      `Server started on port: ${process.env.PORT}` +
-      "\u001b[0m"
+    "\u001b[" + 34 + "m" + `Server started on port: ${PORT}` + "\u001b[0m"
   );
 });
